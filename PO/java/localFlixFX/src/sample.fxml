@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GuiController">
+   <bottom>
+      <HBox spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="dystrybutorButton" mnemonicParsing="false" onAction="#nowyDystrybutor" prefHeight="50.0" prefWidth="150.0" text="Nowy Dystrybutor" />
+            <Button fx:id="usunButton" mnemonicParsing="false" onAction="#usun" prefHeight="50.0" prefWidth="150.0" text="Usuń" />
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="150.0" text="Zakończ" />
+            <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="100.0">
+               <children>
+                  <Text fx:id="saldoText" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo" />
+                  <Text fx:id="dzienText" strokeType="OUTSIDE" strokeWidth="0.0" text="Dzień" />
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <center>
+      <StackPane>
+         <children>
+            <LineChart fx:id="wykres" title="Oglądalność">
+              <xAxis>
+                <CategoryAxis label="Czas" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Wyświetlenia" side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <TableView fx:id="produktyTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <TableView fx:id="klienciTable" prefHeight="200.0" prefWidth="200.0" />
+            <TableView fx:id="dystrybutorzyTable" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </StackPane>
+   </center>
+   <top>
+      <VBox prefHeight="90.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <TextField fx:id="searchField" alignment="TOP_LEFT" maxWidth="201.0" onKeyReleased="#filtruj" prefHeight="20.0" prefWidth="200.0" />
+            <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button alignment="CENTER" minHeight="40.0" mnemonicParsing="false" onAction="#switchToProdukty" prefWidth="180.0" text="Produkty">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" minHeight="40.0" mnemonicParsing="false" onAction="#switchToKlienci" prefWidth="180.0" text="Klienci">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="40.0" mnemonicParsing="false" onAction="#switchToDystrybutorzy" prefWidth="180.0" text="Dystrybutorzy">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
