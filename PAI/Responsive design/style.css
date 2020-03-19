@@ -1,0 +1,132 @@
+  html {
+      box-sizing: border-box;
+      height: 100%;
+  }
+  
+  *,
+  *:before,
+  *:after {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: inherit;
+      font-family: Verdana;
+      font-size: 16px;
+      font-weight: unset;
+      text-decoration: unset;
+      color: black;
+  }
+  
+  body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .Content {
+      flex: 1 0 auto;
+  }
+  
+  .Header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 30px;
+  }
+  
+  .Tytuł {
+      flex-grow: 1;
+      margin-left: 15px;
+      font-weight: bold;
+      font-size: 32px;
+  }
+  
+  .Linki {
+      display: flex;
+      flex-grow: 2;
+      align-self: flex-start;
+      justify-content: right;
+  }
+  
+  .Hamburger {
+      display: none;
+      /* align-self: flex-end; */
+  }
+  
+  nav a {
+      width: 75px;
+  }
+  
+  .Main {
+      display: flex;
+      flex-direction: row;
+      padding: 15px;
+  }
+  
+  .Article {
+      display: flex;
+      flex-direction: column;
+      margin: 15px;
+      width: 100%;
+      border-style: solid;
+      border-color: black;
+      border-width: 2px;
+  }
+  
+  .Article h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-end;
+      height: 50px;
+      width: 50%;
+      font-size: 1.5em;
+      background-color: lightgray;
+      border-style: solid;
+      border-top: 0px;
+      border-right: 0px;
+      border-width: 2px;
+      border-color: black;
+  }
+  
+  .Article p {
+      text-align: justify;
+      padding: 15px;
+  }
+  
+  .Footer {
+      display: flex;
+      flex-direction: column;
+      height: 100px;
+      background-color: lightgray;
+      border-top: 2px;
+      border-bottom: 0px;
+      border-right: 0px;
+      border-left: 0px;
+      border-style: solid;
+      border-color: black;
+      margin-top: 15px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+  }
+  
+  .Podpis {
+      font-weight: bold;
+  }
+  
+  @media all and (max-width: 900px) {
+      main {
+          flex-wrap: wrap;
+      }
+      .Tytuł,
+      .Linki {
+          display: none;
+      }
+      .Logo {
+          justify-content: left;
+      }
+      .Hamburger {
+          display: block;
+          justify-content: end;
+      }
+  }
