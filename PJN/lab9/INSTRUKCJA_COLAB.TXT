@@ -1,0 +1,46 @@
+
+Zalecanym sposobem wykonania zadań jest użycie "Google colaboratory" (https://colab.research.google.com) wysyłając notebook za pomocą File -> Upload notebook i wykonując zdalnie zadania.
+
+Aby wszystko działało na colaboratory, musimy wykonać kilka kroków, aby zainstalować potrzebne biblioteki i zasoby:
+
+1. W pierwszej linijce kodu zainstaluj bibliotekę poprzez wpisanie:
+!pip install python-crfsuite
+
+2. W zadaniu 1, wykorzystując spacy zamiast modelu "en_core_web_md" użyj modelu "en_core_web_sm" (Colaboratory nie ma zainstalowanego modelu md)
+
+3. Tam gdzie wykorzystujemy nltk, ściągnijmy potrzebne paczki poprzez wykonanie:
+import nltk
+nltk.download('popular')
+nltk.download('conll2002')
+
+
+
+
+
+
+
+
+============================
+
+Instalacja lokalna (niezalecana):
+
+
+Aby zainstalować lokalnie pycrfsuite jupyter notebook i inne wymagane zależności w VirtualEnv, otwórz terminal i wpisz nastepujące komendy:
+
+virtualenv lab9
+source ./lab9/bin/activate
+pip3 install jupyter
+pip3 install ipython
+pip3 install ipykernel
+pip3 install nltk
+pip3 install spacy
+pip3 install python-crfsuite
+alias ipy="python3 -c 'import IPython;
+IPython.terminal.ipapp.launch_new_instance()'"
+ipy kernel install --user --name=lab9
+python3 -m spacy download en_core_web_md
+python3 -c 'import nltk;nltk.download("all")'
+
+
+następnie możesz uruchomić Jupyter notebook poleceniem: jupyter-notebook
+Pamiętaj, aby po uruchomieniu Jupytera wybrać odpowiedni Kernel (ten który właśnie stworzyliśmy - lab9)

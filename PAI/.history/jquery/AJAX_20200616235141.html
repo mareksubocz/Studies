@@ -1,0 +1,34 @@
+<!DOCTYPEhtml>
+<html>
+
+<head>
+    <metacharset="utf-8" />
+    <scripttype="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+        </script>
+        <style>
+            a {
+                margin: 10px;
+            }
+            
+            #content {
+                border: 1pxsolidblack;
+                padding: 20px;
+                width: 50%;
+            }
+        </style>
+        <scripttype="text/javascript">$(function() {$('a').click(function() {$('#content').load('AJAX'+ $(this).attr('href'));returnfalse;});});</script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ahref="Selektory.html">Strona1</a>
+                <ahref="Style.html">Strona2</a>
+                    <ahref="Zdarzenia.html">Strona3</a>
+        </nav>
+    </header>
+    <divid="content">
+        </div>
+</body>
+
+</html>

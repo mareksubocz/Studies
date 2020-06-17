@@ -1,0 +1,45 @@
+<!DOCTYPEhtml>
+<html>
+
+<!-- Już podczas testowania używałem serwera po to,
+aby widzieć zmiany na żywo, więc nie testowałem 
+tego ponownie by sprawdzić, czy strona działa. -->
+
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+    </script>
+    <style>
+        a {
+            margin: 10px;
+        }
+        
+        #content {
+            border: 1pxsolidblack;
+            padding: 20px;
+            width: 50%;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $('a').click(function() {
+                $('#content').load('AJAX' + $(this).attr('href'));
+                returnfalse;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="Selektory.html">Strona1</a>
+            <a href="Style.html">Strona2</a>
+            <a href="Zdarzenia.html">Strona3</a>
+        </nav>
+    </header>
+    <div id="content">
+    </div>
+</body>
+
+</html>
